@@ -1,7 +1,7 @@
 # cordova-qdc-alipay
-微信APP支付cordova,ionic插件(Android版，Ios版)
+支付宝APP支付cordova,ionic插件(Android版，Ios版)
 
-* 2015.07.01 微信支付Android集成，初步完成
+* 2015.07.01 支付宝Android集成，初步完成
 
 # 1. Android客户端安装
 开发工程下执行以下命令导入本插件：
