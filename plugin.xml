@@ -37,9 +37,7 @@
     <source-file src="src/android/Alipay.java" target-dir="src/com/qdc/plugins/alipay" />
     <source-file src="src/android/Base64.java" target-dir="src/com/qdc/plugins/alipay" />
     <source-file src="src/android/SignUtils.java" target-dir="src/com/qdc/plugins/alipay" />
-    <source-file src="libs/android/alipaysdk.jar" target-dir="libs" />
-    <source-file src="libs/android/alipaysecsdk.jar" target-dir="libs" />
-    <source-file src="libs/android/alipayutdid.jar" target-dir="libs" />
+    <source-file src="libs/android/alipaySDK-20150610.jar" target-dir="libs" />
   </platform>
 
   <!-- ios
