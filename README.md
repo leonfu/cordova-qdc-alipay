@@ -1,6 +1,7 @@
 # cordova-qdc-alipay
-支付宝APP支付cordova,ionic插件(Android版，Ios版)
+支付宝APP支付cordova,ionic插件(Android版，IOS版)
 
+* 2015.07.02 IOS版支付宝集成
 * 2015.07.02 支付宝签名算法移至服务端
 * 2015.07.01 支付宝Android集成，初步完成
 
