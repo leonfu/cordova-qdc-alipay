@@ -34,7 +34,8 @@
 
     [self.commandDelegate runInBackground:^{
         // check arguments
-         NSDictionary *params = [command.arguments objectAtIndex:0];
+        NSString* strJson = [command.arguments objectAtIndex:0];
+        NSDictionary *params = [self getObjectFromJSON:strJson];
          if (!params)
          {
              [self failWithCallbackID:self.currentCallbackId withMessage:@"参数格式错误"];
@@ -60,11 +61,11 @@
          sign = [params objectForKey:@"sign"];
         
         
-         if (![self isSameSignature:payInfo withSign:sign])
-         {
-             [self failWithCallbackID:self.currentCallbackId withMessage:@"签名校验错误"];
-             return ;
-         }
+//         if (![self isSameSignature:payInfo withSign:sign])
+//         {
+//             [self failWithCallbackID:self.currentCallbackId withMessage:@"签名校验错误"];
+//             return ;
+//         }
 
         //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
         CDVViewController *viewController = (CDVViewController *)self.viewController;
@@ -80,6 +81,19 @@
        }];
     }];
 }
+
+- (NSDictionary*) getObjectFromJSON:(NSString *)json
+{
+    NSError* error;
+    NSDictionary* dict = [NSJSONSerialization JSONObjectWithData: [json dataUsingEncoding:NSUnicodeStringEncoding] options:NSJSONReadingMutableContainers error:&error];
+    if (error)
+    {
+        NSLog(@"Got an error: %@", error);
+        dict = nil;
+    }
+    return dict;
+}
+
 
 -(BOOL)isSameSignature:(NSString *)orign withSign:(NSString *) sign
 {
